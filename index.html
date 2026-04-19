@@ -1612,6 +1612,10 @@
         try { checkAndGrantAdmin(JSON.parse(userRaw).id); } catch {}
       }
 
+      // Show the admin locked banner now that config is loaded
+      document.getElementById('admin-locked-banner').style.display = 'block';
+      updateLockedBanner();
+
     } catch(e) {
       showToast('error', 'FIREBASE ERROR', 'Could not load data. Check your Firebase URL.');
     } finally {
